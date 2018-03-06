@@ -29,9 +29,9 @@ class TemplateWrapper extends Component {
         <Helmet
           title="Mohamed Youssouf - Freelance Frontend Developer"
           meta={[
-            { name: 'description', content: 'Sample' },
+            { name: 'description', content: 'I am Mohamed Youssouf, freelance front-end developer & UI designer' },
             { name: 'keywords', content: 'freelancer, frontend developer, web developer, ui designer, web designer' },
-            { name: 'google-site-verification', content: '03RM5DUW0ENe-9eoaex01B3zyH1CoGxhB84zplQr9dU' }
+            { name: 'google-site-verification', content: '03RM5DUW0ENe-9eoaex01B3zyH1CoGxhB84zplQr9dU' },
           ]}
         />
         <div className="spinner"></div>
