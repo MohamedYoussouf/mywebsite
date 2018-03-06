@@ -31,7 +31,7 @@ class IndexPage extends Component {
     this.state = {
       isEnglish: false,
       language: en,
-      btnText: ''
+      btnText: en.btnText
     };
 
     this.clickhandler = this.clickhandler.bind(this)

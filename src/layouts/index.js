@@ -26,7 +26,14 @@ class TemplateWrapper extends Component {
     const passTo = this.pageTrans.bind(this);
     return (
       <div className={this.state.isPageTransition} dir={this.state.direction}>
-      <div className="spinner"></div>
+        <Helmet
+          title="Mohamed Youssouf - Freelance Frontend Developer"
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'freelancer, frontend developer, web developer, ui designer, web designer' },
+          ]}
+        />
+        <div className="spinner"></div>
         <div id="content">
           <div>
             {this.props.children({...this.props, passTo, direction: this.state.direction})}
