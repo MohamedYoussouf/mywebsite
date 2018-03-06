@@ -50,7 +50,7 @@ class IndexPage extends Component {
         <img src={Logo} alt="" id="logo"/>
         <h1 id="heading" dangerouslySetInnerHTML={{ __html: this.state.language.heading }}></h1>
         <p id="note">{this.state.language.note}</p>
-        <button className="btn btn-default" id="cta-contact" onClick={()=>this.setState({btnText: 'mohamedyoussouf1994@gmail.com'})}>{this.state.btnText}</button>
+        <a href="mailto:example@email.com" className="btn btn-default" id="cta-contact" onClick={()=>this.setState({btnText: 'mohamedyoussouf1994@gmail.com'})}>{this.state.btnText}</a>
         <ul className="social-links">
           <li><a href="#" className="fa fa-twitter" title={this.state.language.socialLinksTitle.twitter}></a></li>
           <li><a href="#" className="fa fa-linkedin" title={this.state.language.socialLinksTitle.linkedin}></a></li>

@@ -31,6 +31,7 @@ class TemplateWrapper extends Component {
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'freelancer, frontend developer, web developer, ui designer, web designer' },
+            { name: 'google-site-verification', content: '03RM5DUW0ENe-9eoaex01B3zyH1CoGxhB84zplQr9dU' }
           ]}
         />
         <div className="spinner"></div>
