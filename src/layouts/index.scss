@@ -16,6 +16,8 @@ $body-font: 'Droid Arabic Naskh', sans-serif;
 $btn-height: 50px;
 $btn-border-width: 3px;
 
+$breack-point: 600px;
+
 html, body {
   direction: rtl;
 }
@@ -214,5 +216,26 @@ body {
   }
   to {
     height: 0%;
+  }
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: $breack-point) {
+  body #___gatsby {
+    height: auto;
+    padding: 5rem 0;
+    #logo {
+      margin-bottom: 45px;
+    }
+    .choose-lang {
+      position: static;
+      margin-bottom: 25px;
+    }
+    #heading {
+      font-size: 2.2rem;
+      line-height: 47px;
+      margin-bottom: 60px;
+    }
   }
 }
