@@ -47,11 +47,11 @@ class IndexPage extends Component {
         </ul>
         <h1 id="heading" dangerouslySetInnerHTML={{ __html: this.state.language.heading }}></h1>
         <p id="note">{this.state.language.note}</p>
-        <a href="mailto:example@email.com" className="btn btn-default" id="cta-contact" onClick={()=>this.setState({btnText: 'mohamedyoussouf1994@gmail.com'})}>{this.state.btnText}</a>
+        <a href="mailto:example@email.com" className="btn btn-default" id="cta-contact" onClick={()=>this.setState({btnText: 'mohamedyoussoufali[at]@gmail.com'})}>{this.state.btnText}</a>
         <ul className="social-links">
-          <li><a href="#" className="fa fa-twitter" title={this.state.language.socialLinksTitle.twitter}></a></li>
-          <li><a href="#" className="fa fa-linkedin" title={this.state.language.socialLinksTitle.linkedin}></a></li>
-          <li><a href="#" className="fa fa-globe" title={this.state.language.socialLinksTitle.website}></a></li>
+          <li><a href="https://twitter.com/MedMYA" className="fa fa-twitter" title={this.state.language.socialLinksTitle.twitter} target='_blank'></a></li>
+          <li><a href="https://www.linkedin.com/in/myoussf" className="fa fa-linkedin" title={this.state.language.socialLinksTitle.linkedin} target='_blank'></a></li>
+          <li><a href="https://www.bixelio.com" className="fa fa-globe" title={this.state.language.socialLinksTitle.website} target='_blank'></a></li>
         </ul>
       </div>
     );
