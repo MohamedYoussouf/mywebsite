@@ -7,9 +7,11 @@ let ar = {
   note: 'هل لديك مشروع ممتع لي؟ :)',
   btnText: 'تواصل معي',
   socialLinksTitle: {
-    twitter: 'قل مرحباً على twitter',
-    linkedin: 'تواصل معي على linkedin',
-    website: 'اقرأ مقالاتي في مدونتي',
+    twitter: 'قل مرحباً على Lwitter',
+    linkedin: 'تواصل معي على Linkedin',
+    // website: 'اقرأ مقالاتي في مدونتي',
+    github: 'مشاريعي على Github',
+    dribbble: 'أعمالي على Dribbble'
   }
 }
 
@@ -18,9 +20,11 @@ let en = {
   note: 'Do you have an interesting project for me? :)',
   btnText: 'Contact Me',
   socialLinksTitle: {
-    twitter: 'Say hello on twitter',
-    linkedin: 'Connect with me on linkedin',
-    website: 'Check my blog',
+    twitter: 'Say hello on Twitter',
+    linkedin: 'Connect with me on Linkedin',
+    // website: 'Check my blog',
+    github: 'Check my projects on Github',
+    dribbble: 'Check my shots on Dribbble'
   }
 }
 // let language = en;
@@ -51,7 +55,9 @@ class IndexPage extends Component {
         <ul className="social-links">
           <li><a href="https://twitter.com/MedMYA" className="fa fa-twitter" title={this.state.language.socialLinksTitle.twitter} target='_blank'></a></li>
           <li><a href="https://www.linkedin.com/in/myoussf" className="fa fa-linkedin" title={this.state.language.socialLinksTitle.linkedin} target='_blank'></a></li>
-          <li><a href="https://www.bixelio.com" className="fa fa-globe" title={this.state.language.socialLinksTitle.website} target='_blank'></a></li>
+          {/* <li><a href="https://www.bixelio.com" className="fa fa-globe" title={this.state.language.socialLinksTitle.website} target='_blank'></a></li> */}
+          <li><a href="https://github.com/MohamedYoussouf" className="fa fa-github" title={this.state.language.socialLinksTitle.github} target='_blank'></a></li>
+          <li><a href="https://dribbble.com/MohamedMYA" className="fa fa-dribbble" title={this.state.language.socialLinksTitle.dribbble} target='_blank'></a></li>
         </ul>
       </div>
     );
