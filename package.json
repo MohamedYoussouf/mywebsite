@@ -4,12 +4,18 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.9.158",
-    "gatsby-link": "^1.6.34",
-    "gatsby-plugin-google-analytics": "^1.0.20",
-    "gatsby-plugin-react-helmet": "^2.0.3",
-    "gatsby-plugin-sass": "^1.0.17",
-    "react-helmet": "^5.2.0"
+    "gatsby": "^2.19.45",
+    "gatsby-link": "^2.2.31",
+    "gatsby-plugin-google-analytics": "^2.1.38",
+    "gatsby-plugin-react-helmet": "^3.1.24",
+    "gatsby-plugin-sass": "^2.1.31",
+    "gatsby-source-filesystem": "^2.1.56",
+    "gatsby-transformer-remark": "^2.6.59",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-helmet": "^5.2.1",
+    "tailwindcss": "^1.2.0"
   },
   "keywords": [
     "gatsby"
