@@ -3,3 +3,27 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css);
+
+a {
+   color: theme('colors.purple');
+   &:hover,
+   &:focus {
+       text-decoration: underline;
+   }
+}
+
+nav, footer {
+    a {
+        &:hover,
+        &:focus {
+            @apply no-underline;
+        }
+    }
+}
+
+.container-inner {
+    max-width: 1000px;
+    margin: auto;
+}

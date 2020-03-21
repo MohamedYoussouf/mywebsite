@@ -1,13 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from '../components/layout'
 
 function BlogPage(props) {
     const postList = props.data.allMarkdownRemark.edges.map(post=>{
         return (
-            <div className="py-5 px-3 flex mb-5 border-b-2 border-gray-300">
-              <img className="w-32 mr-4 self-start" src="https://via.placeholder.com/300.png"/>
+            <div className="py-5 px-3 md:flex mb-5 border-b-2 border-gray-300">
+                <Img className=" w-auto md:w-2/3 md:ml-4 self-start" fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
               <div>
                 <a className="px-3 py-1 inline-block text-sm bg-gray-700 text-gray-100" href="/">tag</a>
                 <a className="mb-1 block" href={post.node.frontmatter.path}><h3 className=" text-xl font-bold">{post.node.frontmatter.title}</h3></a>
@@ -38,8 +39,15 @@ export const pageQuery = graphql`
               title
               path
               date
+              featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
-            excerpt(pruneLength: 300)
+            excerpt(pruneLength: 300, truncate: true)
           }
         }
       }

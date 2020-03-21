@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import './index.scss';
+// import './index.scss';
 
 import Navbar from './navbar'
+import Footer from './footer'
 
 
 
@@ -20,7 +21,7 @@ class Layout extends Component {
 
   render() {
     return (
-      <div>
+      <div dir="rtl">
         <Helmet
           title="Mohamed Youssouf - Freelance Frontend Developer"
           meta={[
@@ -35,6 +36,7 @@ class Layout extends Component {
             {this.props.children}
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }
