@@ -18,7 +18,7 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       'body': [
-        '"Noto Naskh Arabic"',
+        '"Droid Arabic Naskh"',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',

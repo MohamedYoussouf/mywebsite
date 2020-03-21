@@ -16,7 +16,7 @@ export default function Template({
           <h1 className=" text-2xl md:text-4xl font-bold mb-1">{frontmatter.title}</h1>
           <span className="text-base mb-1 inline-block">{frontmatter.date}</span>
           <div
-            className="pt-5 pb-20 leading-relaxed"
+            className="pt-5 pb-20 leading-loose"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
