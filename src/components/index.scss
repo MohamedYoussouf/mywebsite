@@ -4,7 +4,17 @@
 
 @import "tailwindcss/utilities";
 
+@import url(//fonts.googleapis.com/earlyaccess/notokufiarabic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notonaskharabic.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css);
+
+body {
+    @apply font-body text-base text-gray-700 leading-relaxed
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-display mb-2 text-gray-900
+}
 
 a {
    color: theme('colors.purple');
