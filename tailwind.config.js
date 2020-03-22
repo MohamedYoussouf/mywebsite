@@ -37,6 +37,8 @@ module.exports = {
     extend: {
       colors: {
         purple: '#5C3AE8',
+        facebook: '#3b5998',
+        twitter: '#1DA1F2',
       },
       inset: {
         '1/2': '50%',
