@@ -38,6 +38,9 @@ module.exports = {
       colors: {
         purple: '#5C3AE8',
       },
+      inset: {
+        '1/2': '50%',
+      },
     },
   },
   variants: {},

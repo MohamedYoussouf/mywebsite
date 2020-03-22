@@ -9,7 +9,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css);
 
 body {
-    @apply font-body text-base text-gray-700 leading-relaxed;
+    @apply font-body text-base text-gray-700 leading-relaxed pt-20;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -73,4 +73,14 @@ nav, footer {
 .container-inner {
     max-width: 1000px;
     margin: auto;
+}
+
+.post {
+    .gatsby-resp-image-wrapper {
+        width: 900px;
+        position: relative;
+        right: 50%;
+        transform: translateX(50%);
+        max-width: none !important;
+    }
 }

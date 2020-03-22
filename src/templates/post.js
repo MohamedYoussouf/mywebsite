@@ -12,7 +12,7 @@ export default function Template({
   return (
     <Layout>
       <div className="container-inner mx-auto">
-        <div className="px-3 md:px-40">
+        <div className="post px-3 md:px-40">
           <h1 className=" text-2xl md:text-4xl font-bold mb-1">{frontmatter.title}</h1>
           <span className="text-base mb-1 inline-block">{frontmatter.date}</span>
           <div
