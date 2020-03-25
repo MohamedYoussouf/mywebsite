@@ -7,6 +7,8 @@
  // You can delete this file if you're not using it
 
  const path = require(`path`)
+ const _ = require("lodash")
+
  exports.createPages = async ({ actions, graphql, reporter }) => {
    const { createPage } = actions
    const blogPostTemplate = path.resolve(`src/templates/post.js`)
@@ -20,6 +22,7 @@
            node {
              frontmatter {
                path
+               tags
              }
            }
          }
@@ -48,12 +51,47 @@
       },
     })
   })
+  //  Create blog post pages
+   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+     createPage({
+       path: node.frontmatter.path,
+       component: blogPostTemplate,
+       context: {}, // additional data can be passed via context
+     })
+   })
 
-  //  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-  //    createPage({
-  //      path: node.frontmatter.path,
-  //      component: blogPostTemplate,
-  //      context: {}, // additional data can be passed via context
-  //    })
-  //  })
+   // create Tags pages
+  let tags = [];
+  // Iterate through each post, putting all found tags into `tags`
+  posts.forEach(edge => {
+      tags = tags.concat(edge.node.frontmatter.tags);
+  });
+
+  // Eliminate duplicate tags
+  // tags = _.uniq(tags);
+  const countTags = tags.reduce((prev, curr) => {
+    prev[curr] = (prev[curr] || 0) + 1
+    return prev
+  }, {})
+
+  // Make tag pages
+  tags.forEach((tag) => {
+    const link = `/blog/tags/${_.kebabCase(tag)}`;
+
+    Array.from({
+      length: Math.ceil(countTags[tag] / postsPerPage),
+    }).forEach((o, i) => {
+      createPage({
+        path: i === 0 ? link : `${link}/${i + 1}`,
+        component: path.resolve('./src/templates/tag.js'),
+        context: {
+          tag: tag,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          currentPage: i + 1,
+          numPages: Math.ceil(countTags[tag] / postsPerPage),
+        },
+      })
+    })
+  });
  }

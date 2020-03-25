@@ -2,6 +2,7 @@
 path: "/blog/my-first-post"
 date: "2019-05-04"
 title: "تجربة للعنوان بالعربي"
+tags: ["تعلم", "مقالات", "zoos"]
 featuredImage:  ../images/img.jpg
 ---
 

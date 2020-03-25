@@ -1,19 +1,19 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
-
+import { graphql, Link } from "gatsby"
+import _ from 'lodash'
 import Layout from '../components/layout'
 import ShareButtons from '../components/shareButtons'
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+export default function Template(props) {
+  const { markdownRemark } = props.data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
+  const tagList = frontmatter.tags.map((tag)=><Link className="px-3 py-1 ml-3 inline-block text-sm bg-gray-700 bg-purple text-white rounded hover:no-underline focus:no-underline" to={`/blog/tags/${_.kebabCase(tag)}/`}>{tag}</Link>)
+  console.log(props)
   return (
     <Layout>
       <div className="container-inner mx-auto">
-        <div className="post pb-20 px-3 md:px-40">
+        <div className="post pt-8 pb-20 px-3 md:px-40">
+          {tagList}
           <h1 className=" text-2xl md:text-4xl font-bold mb-1">{frontmatter.title}</h1>
           <span className="text-base mb-1 inline-block">{frontmatter.date}</span>
           <div
@@ -34,6 +34,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
     }
   }
