@@ -51,5 +51,15 @@ module.exports = {
         ],
       },
     },
+    { 
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        tailwind: true,
+        whitelist:['post','gatsby-resp-image-wrapper','gatsby-highlight'],
+        ignore: ['node_modules/prismjs', 'src/styles/prism-theme.css']
+        // purgeOnly : ['./src/styles/index.scss'],
+      }
+    },
   ],
 };

@@ -6,3 +6,5 @@
 
  // You can delete this file if you're not using it
  import './src/styles/index.scss';
+ import './src/styles/prism-theme.css';
+//  import 'prismjs/themes/prism-okaidia.css';
