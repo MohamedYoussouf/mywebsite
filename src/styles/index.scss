@@ -9,7 +9,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css);
 
 body {
-    @apply font-body text-base text-gray-700 leading-relaxed pt-20;
+    @apply font-body text-base text-gray-700 leading-relaxed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,7 +54,7 @@ blockquote {
 
 
 a {
-   color: theme('colors.purple');
+   color: theme('colors.primary');
    &:hover,
    &:focus {
        text-decoration: underline;
@@ -71,8 +71,24 @@ nav, footer {
 }
 
 .container-inner {
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
+    @apply px-3;
+}
+
+
+
+.navbar {
+    @apply transition-all duration-300 py-6 mb-2 font-display font-bold bg-gray-100;
+    &.fixed {
+        @apply transition-all duration-300 py-4 mb-6 font-display font-bold bg-white top-0 fixed left-0 right-0 z-10 shadow-md;
+    }
+    &.home {
+        @apply bg-primary;
+        a {
+            color: #fff;
+        }
+    }
 }
 
 .post {
@@ -88,3 +104,26 @@ nav, footer {
 .gatsby-highlight {
     @apply mb-8;
 }
+
+
+.work {
+    @apply  shadow-xl rounded-md relative overflow-hidden transition-shadow duration-500;
+    &:hover,
+    &:focus {
+        @apply shadow-2xl;
+    }
+    img {
+        @apply w-full;
+    }
+    .info {
+        @apply px-5 py-5 absolute bottom-0 left-0 right-0;
+        background:linear-gradient(rgba(#000, 0), rgba(#000, .5));
+        h4 {
+            @apply text-xl  text-white mb-0;
+            @screen md {
+                @apply text-3xl
+            }
+        }
+    }
+}
+

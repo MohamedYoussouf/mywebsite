@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
-import Link from 'gatsby-link';
+import {Link} from 'gatsby';
+
+import Logo from "../images/the_logo.png"
 
 function _handleScroll(e) {
     console.log('scrolling')
   }
 
 class Navbar extends Component {
-    state = {
-        isScrolled: false,
+    constructor(props){
+        super(props)
+        this.state = {
+            isScrolled: false,
+        }
     }
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll)
@@ -23,14 +28,27 @@ class Navbar extends Component {
         }
       }
     render(){
+        let homeClass = this.props.isHome?'home':'';
+        let btnClass = 'mr-5 px-5 py-2 bg-primary text-white rounded shadow-lg';
+
+        if (this.props.isHome) {
+            homeClass = 'home';
+            btnClass = 'mr-5 px-5 py-2 bg-white text-primary rounded shadow-lg  !important'
+        } else {
+            homeClass = '';
+            btnClass = 'mr-5 px-5 py-2 bg-primary text-white rounded shadow-lg'
+            
+        }
+        
         return (
-            <nav className={this.state.isScrolled? 'transition-all duration-300 py-4 mb-6 font-display font-bold bg-white top-0 fixed left-0 right-0 z-10 shadow-md':'transition-all duration-300 py-6 mb-6 font-display font-bold bg-white fixed top-0 left-0 right-0 z-10'}>
-                <div className="container-inner mx-auto px-4 flex justify-between">
-                    <Link to="/">Mohamed Youssouf</Link>
+            <nav className={`navbar`}>
+                <div className="container-inner mx-auto px-4 flex justify-between items-center">
+                    <Link to="/"><img src={Logo} className=" w-24" /></Link>
                     <div className=" text-sm">
+                        <Link className="mr-5" to="services">خدماتي</Link>
                         <Link className="mr-5" to="blog">المدونة</Link>
                         <Link className="mr-5" to="blog">من أنا</Link>
-                        <Link className="mr-5 px-5 py-2 bg-purple text-white rounded shadow-lg" to="blog">تواصل معي</Link>
+                        <Link className={btnClass} to="blog">تواصل معي</Link>
                     </div>
                 </div>
             </nav>

@@ -7,7 +7,7 @@ import ShareButtons from '../components/shareButtons'
 export default function Template(props) {
   const { markdownRemark } = props.data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
-  const tagList = frontmatter.tags.map((tag)=><Link className="px-3 py-1 ml-3 inline-block text-sm bg-gray-700 bg-purple text-white rounded hover:no-underline focus:no-underline" to={`/blog/tags/${_.kebabCase(tag)}/`}>{tag}</Link>)
+  const tagList = frontmatter.tags.map((tag)=><Link className="px-3 py-1 ml-3 inline-block text-sm bg-gray-700 bg-primary text-white rounded hover:no-underline focus:no-underline" to={`/blog/tags/${_.kebabCase(tag)}/`}>{tag}</Link>)
   console.log(props)
   return (
     <Layout>

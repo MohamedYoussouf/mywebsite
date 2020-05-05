@@ -1,4 +1,5 @@
 module.exports = {
+  important: true,
   theme: {
     fontFamily: {
       'display': [
@@ -36,7 +37,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        purple: '#5C3AE8',
+        primary: '#5C3AE8',
         facebook: '#3b5998',
         twitter: '#1DA1F2',
       },
@@ -45,6 +46,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    margin: ['last'],
+  },
   plugins: [],
 }

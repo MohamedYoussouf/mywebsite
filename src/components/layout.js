@@ -21,7 +21,7 @@ class Layout extends Component {
 
   render() {
     return (
-      <div dir="rtl">
+      <div dir="rtl"  className="bg-gray-100">
         <Helmet
           title="Mohamed Youssouf - Freelance Frontend Developer"
           meta={[
