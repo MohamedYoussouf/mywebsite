@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 
 import Navbar from './navbar'
 import Footer from './footer'
+import MobileMenu from './mobileMenu'
 
 
 
@@ -15,9 +16,29 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     
-    this.state = {};
+    this.state = {
+      isMobile: false,
+      openMobileMenu:false
+    };
   }
 
+  componentDidMount(){
+    window.addEventListener('resize', this.handleScreenWidth)
+    this.handleScreenWidth()
+  }
+
+  handleScreenWidth = () => {
+    if (window.innerWidth <= 400) {
+      this.setState({isMobile: true})
+    } else {
+      this.setState({isMobile: false})
+    }
+  }
+
+  toggleMenu = () => {
+    this.setState({openMobileMenu:!this.state.openMobileMenu})
+    console.log(this.state.openMobileMenu)
+  }
 
   render() {
     return (
@@ -30,41 +51,16 @@ class Layout extends Component {
             { name: 'google-site-verification', content: '03RM5DUW0ENe-9eoaex01B3zyH1CoGxhB84zplQr9dU' },
           ]}
         />
-        <Navbar/>
+        <Navbar isMobile={this.state.isMobile} click={()=>this.toggleMenu()}/>
         <div id="content">
           <div>
             {this.props.children}
           </div>
         </div>
         <Footer/>
+        <MobileMenu isMenuOpen={this.state.openMobileMenu} close={()=>this.toggleMenu()}/>
       </div>
     );
-  }
-
-  pageTrans (dir) {
-    
-      this.setState({isPageTransition: 'container is-transition'});
-      // this.setState({isPageTransition: 'container'});
-      
-
-      setTimeout(function() { 
-        
-        if (dir) {
-
-          this.setState({direction: dir});
-        }
-      }.bind(this), 500);
-
-      setTimeout(function() { 
-        
-        this.setState({isPageTransition: 'container'}); 
-      }.bind(this), 1000);
-
-    // } 
-    // else {
-    //   this.setState({isPageTransition: 'container'})
-    // }
-    
   }
 };
 

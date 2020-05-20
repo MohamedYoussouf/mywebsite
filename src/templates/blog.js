@@ -14,8 +14,8 @@ function BlogPage(props) {
     const postList = props.data.allMarkdownRemark.edges.map(post=>{
         return (
             <div className="py-5 px-0 md:flex mb-5 border-b-2 border-gray-300">
-                <Img className=" w-auto md:w-1/4 md:ml-4 self-start rounded-lg" fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
-              <div className="w-4/5">
+              <Img className=" w-auto md:w-1/4 md:ml-4 self-start rounded-lg" fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
+              <div className="w-4/5 mr-5">
                 <a className="mb-1 block hover:no-underline" href={post.node.frontmatter.path}><h3 className=" text-xl font-bold mb-0">{post.node.frontmatter.title}</h3></a>
                 <span className=" text-base text-gray-600 mb-1 inline-block">{post.node.frontmatter.date}</span>
                 <p className=" text-base text-gray-800 text-sm leading-relaxed">{post.node.excerpt}</p>

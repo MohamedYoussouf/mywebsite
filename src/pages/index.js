@@ -35,7 +35,7 @@ const IndexPage = () => {
           <h3 className="text-center text-3xl mb-16">أعمالي</h3>
           <div className="flex flex-col">
             <a href="#" className="work">
-              <img src="https://via.placeholder.com/800x400"/>
+              <img src="https://via.placeholder.com/800x500"/>
               <div className="info">
                 <h4>موقع Djibuy</h4>
               </div>

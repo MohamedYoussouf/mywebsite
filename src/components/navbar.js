@@ -11,7 +11,6 @@ class Navbar extends Component {
     constructor(props){
         super(props)
         this.state = {
-            isScrolled: false,
         }
     }
     componentDidMount(){
@@ -28,28 +27,22 @@ class Navbar extends Component {
         }
       }
     render(){
-        let homeClass = this.props.isHome?'home':'';
-        let btnClass = 'mr-5 px-5 py-2 bg-primary text-white rounded shadow-lg';
 
-        if (this.props.isHome) {
-            homeClass = 'home';
-            btnClass = 'mr-5 px-5 py-2 bg-white text-primary rounded shadow-lg  !important'
-        } else {
-            homeClass = '';
-            btnClass = 'mr-5 px-5 py-2 bg-primary text-white rounded shadow-lg'
-            
-        }
         
         return (
             <nav className={`navbar`}>
                 <div className="container-inner mx-auto px-4 flex justify-between items-center">
                     <Link to="/"><img src={Logo} className=" w-24" /></Link>
+                    {!this.props.isMobile? (
                     <div className=" text-sm">
                         <Link className="mr-5" to="services">خدماتي</Link>
                         <Link className="mr-5" to="blog">المدونة</Link>
                         <Link className="mr-5" to="blog">من أنا</Link>
-                        <Link className={btnClass} to="blog">تواصل معي</Link>
+                        <Link className="mr-5 px-5 py-2 bg-primary text-white rounded shadow-lg" to="blog">تواصل معي</Link>
                     </div>
+                    ): (
+                        <button onClick={this.props.click} className="text-xl px-2 py-2"><i className="fas fa-bars"></i></button>
+                    )}
                 </div>
             </nav>
         )
