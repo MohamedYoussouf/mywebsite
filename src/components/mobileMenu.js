@@ -10,10 +10,9 @@ const MobileMenu = (props) => {
     }
     console.log(props.isMenuOpen)
     return (
-        <div 
-            onClick={props.close}
-            className={classes}>
-            <button className="absolute top-0 right-0 p-5 text-white text-3xl"><i className="fas fa-times    "></i></button>
+        <div className={classes}>
+            <button className="absolute top-0 right-0 p-5 text-white text-3xl"
+            onClick={props.close}><i className="fas fa-times    "></i></button>
             <Link className="text-white py-5 text-2xl font-display font-bold" to="services">خدماتي</Link>
             <Link className="text-white py-5 text-2xl font-display font-bold" to="blog">المدونة</Link>
             <Link className="text-white py-5 text-2xl font-display font-bold" to="blog">من أنا</Link>
