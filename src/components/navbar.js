@@ -35,10 +35,10 @@ class Navbar extends Component {
                     <Link to="/"><img src={Logo} className=" w-24" /></Link>
                     {!this.props.isMobile? (
                     <div className=" text-sm">
-                        <Link className="mr-5" to="services">خدماتي</Link>
-                        <Link className="mr-5" to="blog">المدونة</Link>
-                        <Link className="mr-5" to="blog">من أنا</Link>
-                        <Link className="mr-5 px-5 py-2 bg-primary text-white rounded shadow-lg" to="blog">تواصل معي</Link>
+                        <Link className="mr-5 inline-block" to="services">خدماتي</Link>
+                        <Link className="mr-5 inline-block" to="blog">المدونة</Link>
+                        <Link className="mr-5 inline-block" to="blog">من أنا</Link>
+                        <Link className="mr-5 inline-block px-5 py-2 bg-primary text-white rounded shadow-lg" to="blog">تواصل معي</Link>
                     </div>
                     ): (
                         <button onClick={this.props.click} className="text-xl px-2 py-2"><i className="fas fa-bars"></i></button>
