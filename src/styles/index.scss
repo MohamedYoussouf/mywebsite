@@ -93,11 +93,14 @@ nav, footer {
 
 .post {
     .gatsby-resp-image-wrapper {
-        width: 900px;
+        
+        @screen md {
+            width: 900px;
         position: relative;
         right: 50%;
         transform: translateX(50%);
         max-width: none !important;
+        }
     }
 }
 
