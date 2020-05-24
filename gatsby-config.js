@@ -1,6 +1,24 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
+    socialProfiles: [
+      {
+        name: 'twitter',
+        url: 'https://twitter.com/MedMYA',
+      },
+      {
+        name: 'dribbble',
+        url: 'https://dribbble.com/MohamedMYA',
+      },
+      {
+        name: 'github',
+        url: 'https://github.com/MohamedYoussouf',
+      },
+      {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/in/myoussf',
+      },
+    ]
   },
   plugins: [
     'gatsby-plugin-react-helmet',
