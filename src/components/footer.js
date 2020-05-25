@@ -4,7 +4,7 @@ import SocialLink from './socialLink'
 
 
 const Footer = (props) => {
-    const listSocialLinks = <StaticQuery
+  const listSocialLinks = <StaticQuery
     query={graphql`
       {
         site {
@@ -26,17 +26,19 @@ const Footer = (props) => {
     )}
   />
     return (
-        <footer className=" py-20 text-center bg-gray-900 text-white">
+        <footer className="py-20 bg-gray-900">
             <div className="container-inner mx-auto">
-                <div className="mb-5">
-                    <Link className="px-2 text-gray-200" to="/">Link</Link>
-                    <Link className="px-2 text-gray-200" to="/">Link</Link>
-                    <Link className="px-2 text-gray-200" to="/">Link</Link>
+              <div className="flex justify-between items-center mb-8">
+                <div>
+                    <Link className="px-2 text-gray-600" to="/">Link</Link>
+                    <Link className="px-2 text-gray-600" to="/">Link</Link>
+                    <Link className="px-2 text-gray-600" to="/">Link</Link>
                 </div>
-                <div className="mb-12">
+                <div>
                 {listSocialLinks}
                 </div>
-                <p className="text-sm mb-0 text-gray-600">جميع الحقوق محفوظة 2020</p>
+              </div>
+              <p className="text-sm mb-0 text-gray-600">جميع الحقوق محفوظة 2020</p>
             </div>
         </footer>
     );

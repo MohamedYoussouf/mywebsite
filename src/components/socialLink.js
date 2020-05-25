@@ -2,7 +2,7 @@ import React from 'react';
 
 function SocialLink({name, url}) {
     return (
-        <a className="mx-3 w-12 h-12 rounded-full inline-flex items-center justify-center bg-gray-800 text-white text-base hover:bg-primary" 
+        <a className="text-gray-600 text-2xl mr-5 hover:text-primary" 
             href={url}>
             <i className={`fab fa-${name}`} />
         </a>
